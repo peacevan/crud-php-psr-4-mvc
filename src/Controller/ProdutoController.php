@@ -1,34 +1,54 @@
 <?php
 
-namespace crud1\Controller;
+namespace src\Controller;
 
-//use Model\ProdutoModel;
-//use Repository\ProdutoRepository;
+use src\Model\ProdutoModel;
+use src\Repository\ProdutoRepository;
+
 class ProdutoController extends Controller {
+    /**
+     * @var string
+     */
+    protected $modelProduto = "ProdutoModel";
+
 
     public function index() {
         //$data['mahasiswa'] = $this->model('Home')->getAll();
-        $data['title'] = "Halaman home";
+        $data['title'] = "Cadastro de Poduto";
         $this->view("templates/header", $data);
         $this->view("produto/index", $data);
         $this->view("templates/footer");
     }
 
-    public function addProdutoAction($produtoPost) {
-
-        $produto = new crud1\Controller\ProdutoController();
+    public function cadProduto($produtoPost) {
+        $produto = new app\Controller\ProdutoController();
         $produto->setDescricao($produtoPost['descricao']);
         $produto->setValor($produtoPost['valor']);
+        
+        $produto =$this->Model($modelProduto);
+        $produto->setDescricao($produtoPost['descricao']);
+        $produto->setValor($produtoPost['valor']);
+        
+        
+        
+        
+         if(count($_POST)) {
+            $result = $produto->insert($produto);
+            if ($result) {
 
-        $result = $produto->insert($produto);
-        if ($result) {
-
-            $msg = 'CADASTRADO COM SUCESSO!!!';
-        } else {
-            $msg = 'ERRO AO CADASTRAR PRODUTOS';
+                $msg = 'CADASTRADO COM SUCESSO!!!';
+            } else {
+                $msg = 'ERRO AO CADASTRAR PRODUTOS';
+            }
+            return $msg;
         }
-
-        return $msg;
+        
+         //$data['mahasiswa'] = $this->model('Home')->getAll();
+        $data['title'] = "Cadastro de Poduto";
+        $this->view("templates/header", $data);
+        $this->view("produto/index", $data);
+        $this->view("templates/footer");
+        
     }
 
     public function removerProdutoAction() {

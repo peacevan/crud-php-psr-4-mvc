@@ -1,6 +1,6 @@
 <?php
 
-namespace crud1\connection;
+namespace app\connection;
 
 use PDO;
 
