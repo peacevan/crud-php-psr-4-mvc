@@ -1,0 +1,20 @@
+
+{
+
+"name": "Crud-mvc-psr4",
+    "description": "Php with psr-4",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Amado",
+            "email": "peacevan@gmail.com"
+        }
+
+
+"autoload":{
+   "psr-4":{
+        "crud1\\": "src/"
+    }
+ }
+ 
+ }
