@@ -1,6 +1,6 @@
 <?php
 
-namespace Crud1\Route;
+namespace app\Route;
 
 class Route {
 

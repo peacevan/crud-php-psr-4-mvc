@@ -1,19 +1,20 @@
 <?php
 
 /*
---------------------------------------------------------------------------
- vendor autoload
- Import composer vendor
-*/
+  --------------------------------------------------------------------------
+  vendor autoload
+  Import composer vendor
+ */
 require '../vendor/autoload.php';
 
 /*
-| Import configuration
-*/
+  | Import configuration
+ */
 require '../config/config.php';
 
 require '../util/util.php';
-use crud1\Route\Route;
+
+use app\Route\Route;
 
 /**
  * Create instance Class Route
