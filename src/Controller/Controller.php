@@ -1,18 +1,21 @@
 <?php
 
-namespace src\Controller;
+namespace app\Controller;
 
 use Exception;
-
+use app\Util\Util;
 class Controller {
 
     /**
      * @return mixed
      * 
      */
+    
+    
+    
     public function view($view, $data = []) {
         $file = "../src/views/{$view}.php";
-
+        
         if (file_exists($file)) {
             require_once $file;
         } else {
@@ -29,7 +32,7 @@ class Controller {
         if (class_exists($model)) {
             return new $model;
         } else {
-            dd($model . " model  not found!");
+            Util::dd($model . " model  not found!");
         }
     }
 
@@ -37,14 +40,27 @@ class Controller {
      * @return  mixed
      * 
      */
-    public function repository($repository) {
-        $model = "app\\repository\\" . $repository;
+    public function getRepository($repository) {
+        $model = "app\\Repository\\" . $repository;
         if (class_exists($model)) {
             return new $model;
         } else {
-            dd($repository . "repository not found!");
+            Util::dd($repository ." not found!");
         }
     }
+    
+    /** @return  mixed
+     * 
+     */
+    public function getController($controller) {
+        $controller = "app\\Controller\\" . $controller;
+        if (class_exists($controller)) {
+            return new $controller;
+        } else {
+            Util::dd($controller . " not found!");
+        }
+    }
+    
 
     public function rowCount() {
         
