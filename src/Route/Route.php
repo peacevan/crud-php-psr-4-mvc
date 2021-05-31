@@ -10,22 +10,29 @@ class Route {
 
 	public function __construct()
 	{
-		$url = $this->parseURL();		
-		if(class_exists("crud1\\Controller\\{$url[0]}")){
+		
+             
+                $url = $this->parseURL();
+                 
+		if(class_exists("app\\Controller\\{$url[0]}")){
+                       
 			$this->controller = $url[0];
 			unset($url[0]);
 		} else {
 			dd("$url[0] not found");
         }
-		$this->controller = "crud1\\Controller\\".$this->controller;
+		
+         
+               $this->controller = "app\\Controller\\".$this->controller;
 		$this->controller = new $this->controller;
-
+               
 		if(isset($url[1])) {
 			if (method_exists($this->controller, $url[1])) {
 				$this->method = $url[1];
 				unset($url[1]);
 			} else{
-				dd("$url[1] not found");	
+				dd("$url[1] not found1");
+                                //$this->method = 'index';
 			}
 		}
         // se exite params 

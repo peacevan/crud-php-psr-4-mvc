@@ -12,15 +12,17 @@ require '../vendor/autoload.php';
  */
 require '../config/config.php';
 
-require '../util/util.php';
+//require '../util/util.php';
 
 use app\Route\Route;
+use app\Util\Util;
 
 /**
  * Create instance Class Route
  * 
  */
 $route = new Route;
+$util = new Util;
 
 /**
  * Call function run
