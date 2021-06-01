@@ -2,6 +2,7 @@
 ##
 
 crud  com php orientado a objeto psr-4  e mvc
+![Vue Demo](https://i.ibb.co/9sB6D3M/vuedemo.jpg)
 
 
 Tabela de conteúdos
