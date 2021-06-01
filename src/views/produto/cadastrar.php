@@ -6,7 +6,7 @@
                   data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
                   data-bv-feedbackicons-validating="glyphicon glyphicon-refresh"
 
-                  action="<?= BASEURL . $data['redirect'] ?>"
+                  action="<?= BASEURL .$data['redirect'] ?>"
                   >
                 <div  class="form-cadastro">
                     <h4><i class="glyphicon glyphicon-user"></i> Novo Cadastro <span class="observacao-usuarios">*Campos obrigatórios</span></h4>
@@ -15,7 +15,7 @@
                     <div class="form-group">
                         <label class="control-label">Cód. do Produto:</label>
                         <div class="col-sm-1">
-                            <input type="text"  name="codProduto" id="cod_ean" onkeypress="return handleEnter(this, event)" class="form-control" placeholder="Recomendado que seja o código EAN de barras" />
+                            <input type="text"  name="codProduto" id="cod_ean"  class="form-control" placeholder="Recomendado que seja o código EAN de barras" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -30,13 +30,13 @@
                     <div class="form-group">
                         <label class="control-label">Preço Unid.:</label>
                         <div class="col-sm-2">
-                            <input name="valor"  type="text" id="valor_prod" onkeypress="return handleEnter(this, event)"  onkeyup="SubstituiVirgulaPorPonto(this)" class="form-control" placeholder="Ex: R$ 3,00" />
+                            <input name="valor"  type="text" id="valor_prod"    class="form-control" placeholder="Ex: R$ 3,00" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label">Limite para estoque:</label>
                         <div class="col-sm-2">
-                            <input name="qtde" type="text" id="qtde_minima" size="6" onkeypress="return handleEnter(this, event)"  onkeyup="SubstituiVirgulaPorPonto(this)"  class="form-control" placeholder="Ex: 10"  />
+                            <input name="qtde" type="text" id="qtde_minima" size="6"     class="form-control" placeholder="Ex: 10"  />
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
 
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">© 2021 Copyright:
-                <a href="https://mdbootstrap.com/"> Ivan Amado</a>
+                <a href="https://ssat.com.br/"> Ivan Amado</a>
             </div>
             <!-- Copyright -->
 

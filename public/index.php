@@ -6,14 +6,10 @@
   Import composer vendor
  */
 require '../vendor/autoload.php';
-
 /*
   | Import configuration
  */
 require '../config/config.php';
-
-//require '../util/util.php';
-
 use app\Route\Route;
 use app\Util\Util;
 
