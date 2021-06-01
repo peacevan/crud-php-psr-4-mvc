@@ -3,11 +3,12 @@
 <head>
 	<meta charset="UTF-8">
         <title><?= $data['title']; //json_decode($data,true)['title']; ?></title>
-	<link rel="stylesheet" href="<?= BASEURL ?>assets/css/bootstrap.min.css">
-        
+        <link rel="stylesheet" type="text/css" href="<?= BASEURL ?>assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?= BASEURL ?>assets/css/bootstrap.min.css">
+        <script src="<?= BASEURL ?>assets/js/axios.min.js"></script>
 </head>
 <body>
-
+<div id="root">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Crud-Produto</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

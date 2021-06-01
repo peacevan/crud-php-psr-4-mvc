@@ -4,11 +4,6 @@ namespace app\Connection;
 
 use PDO;
 
-$username = 'root';
-$password = '';
-$dbname = 'crud_poo';
-$host = 'localhost';
-
 class Connection {
 
     private $host = DB_HOST;
@@ -20,16 +15,16 @@ class Connection {
     function getConn() {
         try {
 
-            $dsn = 'mysql:dbname='.$this->dbes.';host=' .$this->host;
+            $dsn = 'mysql:dbname=' .$this->dbes. ';host='.$this->host;
 
             $conn = new PDO($dsn, $this->user, $this->pass);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             $this->Conn = $conn;
         } catch (PDOException $e) {
-            die('ERROR:'.$e->getMessage());
+            die('ERROR:' . $e->getMessage());
         }
-       
-        
+
+
         return $this->Conn;
     }
 

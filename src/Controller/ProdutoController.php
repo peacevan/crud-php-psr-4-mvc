@@ -25,13 +25,12 @@ class ProdutoController extends Controller {
 
         $msg = '';
         if (count($_POST)) {
-
             /*
-            $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
-            $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
-            $subject = filter_input(INPUT_POST, "subject", FILTER_SANITIZE_STRING);
-            $message = filter_input(INPUT_POST, "message", FILTER_SANITIZE_STRING);
-           */
+              $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+              $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+              $subject = filter_input(INPUT_POST, "subject", FILTER_SANITIZE_STRING);
+              $message = filter_input(INPUT_POST, "message", FILTER_SANITIZE_STRING);
+             */
             //$util::dd($_POST);
             $produtoController = $this->getController('ProdutoController');
             $produtoModel = $produtoController->Model($this->modelProduto);
@@ -60,9 +59,16 @@ class ProdutoController extends Controller {
     public function removerProdutoAction() {
         
     }
+    
+    
 
-    public function listarProdutoAction() {
-        
+    public function listar() {
+        $produtoController = $this->getController('produtoController');
+        $produtoList = $produtoController->getRepository('ProdutoRepository')->findAll();
+        $data['title'] = 'Produto';
+        $data['redirect'] = 'produto/cadastrar';
+        echo $produtoList;
+        return  $produtoList ;
     }
 
     public function findProductoAction() {
