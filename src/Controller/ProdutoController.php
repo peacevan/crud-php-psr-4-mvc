@@ -25,50 +25,106 @@ class ProdutoController extends Controller {
 
         $msg = '';
         if (count($_POST)) {
-
             /*
-            $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
-            $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
-            $subject = filter_input(INPUT_POST, "subject", FILTER_SANITIZE_STRING);
-            $message = filter_input(INPUT_POST, "message", FILTER_SANITIZE_STRING);
-           */
+              $name =    filter_input($_POST, "descricao_prod", FILTER_SANITIZE_STRING);
+              $email =   filter_input($_POST, "email", FILTER_SANITIZE_EMAIL);
+              $subject = filter_input($_POST, "valor", FILTER_SANITIZE_STRING);
+              $message = filter_input($_POST, "cod_ean", FILTER_SANITIZE_STRING);
+             */
             //$util::dd($_POST);
             $produtoController = $this->getController('ProdutoController');
             $produtoModel = $produtoController->Model($this->modelProduto);
-            $produtoModel->setDescricao($_POST['descricao']);
+            $produtoModel->setDescricao($_POST['descricao_prod']);
             $produtoModel->setValor($_POST['valor']);
-            $produtoModel->setQtde($_POST['qtde']);
-            $produtoModel->setCodProduto($_POST['codProduto']);
+            $produtoModel->setQtde($_POST['1']);
+            $produtoModel->setCodProduto($_POST['cod_ean']);
             //$produtoModel->setCodean();
-
-            $result = $produtoController->getRepository('produtoRepository')
+            $res = $produtoController->getRepository('produtoRepository')
                     ->save($produtoModel);
-
             if ($result) {
-                $msg = 'CADASTRADO COM SUCESSO!!!';
+                $res['message'] = "User added successfully";
             } else {
-                $msg = 'ERRO AO CADASTRAR PRODUTOS';
+                $res['error'] = true;
+                $res['message'] = "User insert failed!";
             }
-            return $msg;
         }
+        $action = $_GET['action'];
+        if (!isset($_GET['action'])) { //se não for requisição ajax;
+            $data['title'] = 'Produto';
+            $data['redirect'] = 'produto/cadastrar';
+            $data['msg'] = $msg;
+            return $this->render('cadastrar', $data, true);
+        } else {
+            return $res;
+        }
+    }
+
+    public function remover() {
+       
+        $produtoController = $this->getController('produtoController');
+        $produtoList = $produtoController->getRepository('ProdutoRepository')->remove($_POST['id_prod']);
+        $data['title'] = 'Produto';
+        $data['redirect'] = 'produto/remover';
+        echo $produtoList['success'];
+        return $produtoList;
+    }
+
+    public function listar() {
+        $produtoController = $this->getController('produtoController');
+        $produtoList = $produtoController->getRepository('ProdutoRepository')->findAll();
         $data['title'] = 'Produto';
         $data['redirect'] = 'produto/cadastrar';
-        $data['msg'] = $msg;
-        return $this->render('cadastrar', $data, true);
-    }
-
-    public function removerProdutoAction() {
-        
-    }
-
-    public function listarProdutoAction() {
-        
+        echo $produtoList;
+        return $produtoList;
     }
 
     public function findProductoAction() {
         
     }
 
+    public function editar() {
+
+        $msg = '';
+        $res = null;
+        if (count($_POST)) {
+            /*
+              $name =    filter_input($_POST, "descricao_prod", FILTER_SANITIZE_STRING);
+              $email =   filter_input($_POST, "email", FILTER_SANITIZE_EMAIL);
+              $subject = filter_input($_POST, "valor", FILTER_SANITIZE_STRING);
+              $message = filter_input($_POST, "cod_ean", FILTER_SANITIZE_STRING);
+             */
+            //$util::dd($_POST);
+            $produtoController = $this->getController('ProdutoController');
+            $produtoModel = $produtoController->Model($this->modelProduto);
+            $produtoModel->setDescricao($_POST['descricao_prod']);
+            $produtoModel->setValor($_POST['valor']);
+            $produtoModel->setQtde(1);
+            $produtoModel->setCodProduto($_POST['cod_ean']);
+            //$produtoModel->setCodean();
+            $res = $produtoController->getRepository('produtoRepository')->edit($produtoModel);
+
+            if ($result) {
+                $res['message'] = "Produnto cadastrado com sucesso";
+            } else {
+                $res['error'] = true;
+                $res['message'] = "Erro ao cadastrar produtos!";
+            }
+        }
+        $action = $_GET['action'];
+        if (!isset($_GET['action'])) { //se não for requisição ajax;
+            $data['title'] = 'Produto';
+            $data['redirect'] = 'produto/editar';
+            $data['msg'] = $msg;
+            return $this->render('cadastrar', $data, true);
+        } else {
+            return $res;
+        }
+    }
+    function home(){
+        
+        
+        return $this->render('cadastrar', $data, true);
+    }
 }
 ?>
 
