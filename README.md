@@ -18,18 +18,19 @@ Tabela de conteúdos
    * [Tests](#testes)
    * [Tecnologias](#tecnologias)
 <!--te-->
-
-Assuntos Abordados no Desenvolvimento do Projeto:
-Acesso a banco de dados com o MySql
-Otimização da conexão com o banco de dados através do PDO (PHP Data Object)
-linguagens : JavaScript e CSS
-Uso do framework Bootstrap para realização de um layout responsivo para o projeto.
-Configuração do Projeto:
-Executar a query produto.sql ou importar o arquivo no phpMyAdmin para criar a table necessária.
-Editar o arquivo config.php
-$dbNome = 'nomeDaTable' 
-$dbHost = 'nomeDoDominioOuIP:Porta' 
-$dbUsuario = 'usuarioDoMysql' 
-$dbSenha 'senhaDoUsuario'
+<!--ts-->
+ *Assuntos Abordados no Desenvolvimento do Projeto:
+ *Acesso a banco de dados com o MySql
+ *Otimização da conexão com o banco de dados através do PDO (PHP Data Object)
+ *linguagens : JavaScript e CSS
+ *Uso do framework Bootstrap para realização de um layout responsivo para o projeto.
+ *Configuração do Projeto:
+      *Executar a query produto.sql ou importar o arquivo no phpMyAdmin para criar a table necessária.
+      *Editar o arquivo config.php
+      *$dbNome = 'nomeDaTable' 
+      *$dbHost = 'nomeDoDominioOuIP:Porta' 
+      *$dbUsuario = 'usuarioDoMysql' 
+      *$dbSenha 'senhaDoUsuario'
+  <!--te-->
 
 
