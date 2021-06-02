@@ -14,7 +14,9 @@ class Route {
 
 
         $url = $this->parseURL();
-
+       
+        var_dump(class_exists("app\\Controller\\{$url[0]}"));
+        die;
         if (class_exists("app\\Controller\\{$url[0]}")) {
 
             $this->controller = $url[0];
@@ -31,7 +33,7 @@ class Route {
                 unset($url[1]);
             } else {
                 Util::dd("$url[1] not found1");
-                //$this->method = 'index';
+                $this->method = 'index';
             }
         }
         // se exite params 
@@ -45,7 +47,7 @@ class Route {
             $url = explode('/', filter_var(rtrim($_GET['url']), FILTER_SANITIZE_URL));
             $url[0] = $url[0] . 'Controller';
         } else {
-            $url[0] = 'homeController';
+            $url[0] = 'HomeController';
         }
         return $url;
     }

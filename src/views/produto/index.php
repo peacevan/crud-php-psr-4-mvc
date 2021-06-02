@@ -1,4 +1,11 @@
 <div class="container mt-5">
+    <div class="alert alert-danger col-md-6" id="alertMessage" role="alert" v-if="errorMessage">
+        {{ errorMessage }}
+    </div>
+
+    <div class="alert alert-success col-md-6" id="alertMessage" role="alert" v-if="successMessage">
+        {{ successMessage }}
+    </div>
     <table class="table table-bordered table-striped" >
         <thead class="thead-dark">
             <tr>
@@ -15,8 +22,8 @@
                 <td>{{produto.descricao_prod}}</td>
                 <td>{{produto.valor}}</td>
                 <!--<td>{{user.mobile}}</td>-->
-                <td><button @click="showingeditModal = true; selectProduto(produto);" class="btn btn-warning">Edit</button></td>
-                <td><button @click="showingdeleteModal = true; selectProduto(produto);" class="btn btn-danger">Delete</button></td>
+                <td><button @click="showingeditModal = true;  selectProduto(produto);" class="btn btn-warning">Edit</button></td>
+                <td><button @click="showingdeleteModal = true;selectProduto(produto);" class="btn btn-danger">Delete</button></td>
             </tr>
         </tbody>
     </table>
@@ -25,24 +32,24 @@
 <!-- add modal -->
 <div class="modal col-md-6" id="addmodal" v-if="showingaddModal">
     <div class="modal-head">
-        <p class="p-left p-2">Add user</p>
+        <p class="p-left p-2">Adicionar produto</p>
         <hr/>
 
         <div class="modal-body">
             <div class="col-md-12">
-                <label for="uname">Produtoname</label>
+                <label for="uname">codigo</label>
                 <input type="text" id="uname" class="form-control" v-model="clickedProduto.cod_ean">
 
-                <label for="email">Email</label>
-                <input type="text" id="email" class="form-control" v-model="clickedProduto.desc_prod">
+                <label for="email">descrição</label>
+                <input type="text" id="email" class="form-control" v-model="clickedProduto.descricao_prod">
 
-                <label for="phn">Mobile</label>
+                <label for="phn">valor</label>
                 <input type="text" id="phn" class="form-control" v-model="clickedProduto.valor">
             </div>
 
             <hr/>
-            <button type="button" class="btn btn-success"  @click="showingaddModal = false; addProduto();">Save changes</button>
-            <button type="button" class="btn btn-danger"   @click="showingaddModal = false;">Close</button>
+            <button type="button" class="btn btn-success"  @click="showingaddModal = false; addProduto();">Salva</button>
+            <button type="button" class="btn btn-danger"   @click="showingaddModal = false;">Fecha</button>
         </div>
     </div>
 </div>
@@ -51,7 +58,7 @@
 <!-- edit modal -->
 <div class="modal col-md-6" id="editmodal" v-if="showingeditModal">
     <div class="modal-head">
-        <p class="p-left p-2">Edit user</p>
+        <p class="p-left p-2">Editar Produto</p>
         <hr/>
 
         <div class="modal-body">
@@ -86,8 +93,8 @@
                 <h3>{{clickedProduto.descricao_prod}}</h3>
             </center>
             <hr/>
-            <button type="button" class="btn btn-danger"  @click="showingdeleteModal = true; deleteProduto();">Yes</button>
-            <button type="button" class="btn btn-warning"   @click="showingdeleteModal = false;">No</button>
+            <button type="button" class="btn btn-danger"  @click="showingdeleteModal = false; deleteProduto();">Sim</button>
+            <button type="button" class="btn btn-warning"   @click="showingdeleteModal = false;">Não</button>
         </div>
     </div>
 </div>

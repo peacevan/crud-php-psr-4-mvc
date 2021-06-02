@@ -38,14 +38,36 @@ class ProdutoRepository {
         return $result;
     }
 
-    function update($produto) {
-        $update = $conn->prepare('UPDATE produtos set :descricao_prod = :descricao_prod, valor = :valor,cod_ean:cod_ean where id = ?;');
-        $update->bindParam(':descricao_prod', $produto->getDescricao, PDO::PARAM_STR);
-        $update->bindParam(':valor', $produto->getValor(), PDO::PARAM_STR);
-        $update->bindParam(':cod_ean', $produto->codEan(), PDO::PARAM_INT);
-        $update->execute();
-        $update->closeCursor();
-        $conn = null;
+    /**
+     * Função editar produto
+     * @access public 
+     * @param codigoProduto
+     * @return lista de produtos
+     */
+    function edit($produto) {
+        try {
+            $conn = new Connection();
+            $conn = $conn->getConn();
+            $result = false;
+            $conn->beginTransaction();
+            $codProduto = $produto->getCodProduto();
+            $valor = $produto->getValor();
+            $descricao = $produto->getDescricao();
+            $update = $conn->prepare('UPDATE produtos set descricao_prod = :descricao_prod, valor = :valor,cod_ean = :cod_ean where cod_ean = :id;');
+            $update->bindParam(':descricao_prod', $descricao);
+            $update->bindParam(':valor', $valor);
+            $update->bindParam(':cod_ean', $codProduto);
+            $update->bindParam(':id', $codProduto);
+            $update->execute();
+            $update->closeCursor();
+            $conn = null;
+        } catch (PDOException $e) {
+            $conn->rollBack();
+            $relsut['erro'] = true;
+            $result['msgErro'] = $e->getMessage();
+            die($result['msgErro']);
+        }
+        return $result;
     }
 
     /**
@@ -54,13 +76,18 @@ class ProdutoRepository {
      * @param codigoProduto
      * @return lista de produtos
      */
-    function remove($produto) {
+    function remove($id) {
+        
+        $conn = new Connection();
+        $conn = $conn->getConn();
+        $result = false;
         if (isset($conn)) {
             $result['error'] = false;
             $result['success'] = true;
+            
             try {
-                $update = $conn->prepare('delete from produto where id = :id;');
-                $update->bindParam(':id', $produto->getId(), PDO::PARAM_INT);
+                $update = $conn->prepare('delete from produtos where id_prod = :id;');
+                $update->bindParam(':id', $id, PDO::PARAM_INT);
                 $update->execute();
                 $update->closeCursor();
                 $result['success'] = true;
@@ -68,8 +95,10 @@ class ProdutoRepository {
             } catch (PDOException $e) {
                 $result['error'] = $e->getMessage();
                 $result['success'] = false;
+                die($e->getMessage());
             }
         }
+         var_dump($result);
         return $result;
     }
 
@@ -86,21 +115,12 @@ class ProdutoRepository {
         $result = false;
         if (isset($conn)) {
             $result = false;
-//            $read = $conn->prepare('SELECT * FROM produtos');
-//            $exec=$read->execute();
-//            $result = $read->fetch(PDO::FETCH_OBJ);
-            // $sql = "SELECT * FROM produtos";
-            // $result = $conn->query($sql);
-            // $rows = $result->fetchAll();
-            // return $rows;
-            // prepare statement for execution
             $q = $conn->prepare('SELECT * FROM produtos');
             // pass values to the query and execute it
             $q->execute();
             $results = $q->fetchAll(PDO::FETCH_ASSOC);
             $json = json_encode($results);
-             return  $json;
-            
+            return $json;
         } else {
             return false;
         }
