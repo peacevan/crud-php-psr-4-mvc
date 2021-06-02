@@ -18,8 +18,10 @@ Tabela de conteúdos
    * [Tests](#testes)
    * [Tecnologias](#tecnologias)
 <!--te-->
+
 <!--ts-->
- *Assuntos Abordados no Desenvolvimento do Projeto:
+ Assuntos Abordados no Desenvolvimento do Projeto
+ ==================================================
  *Acesso a banco de dados com o MySql
  *Otimização da conexão com o banco de dados através do PDO (PHP Data Object)
  *linguagens : JavaScript e CSS
