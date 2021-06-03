@@ -65,6 +65,6 @@ yarn start
 
 Ivan Amado
 
-https://www.linkedin.com/in/wmazoni
+https://www.linkedin.com/in/ivan-amado-6ba88629/
 
 
