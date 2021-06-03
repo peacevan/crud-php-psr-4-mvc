@@ -1,37 +1,70 @@
-# crud-php-psr-4-mvc-pdo-vue
-##
+# CRUD PHP POO PSR4 MVC VUE 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) 
 
-Implementação de uma crud  com  PHP & Composer & psr4 & MVC & PDO &Mysql & Boostrap & VUE
+# Sobre o projeto
+crud em php utilizando psr4  vue js e PDO  mysql.
 
-Tabela de conteúdos
-=================
-<!--ts-->
-   * [Sobre](#Sobre)
-   * [Tabela de Conteudo](#tabela-de-conteudo)
-   * [Instalação](#instalacao)
-   * [Como usar](#como-usar)
-      * [Pre Requisitos](#pre-requisitos)
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
-      * [Multiple files](#multiple-files)
-      * [Combo](#combo)
-   * [Tests](#testes)
-   * [Tecnologias](#tecnologias)
-<!--te-->
+A aplicação grava dados do produto no banco de dados mysql.
 
-<!--ts-->
- Assuntos Abordados no Desenvolvimento do Projeto
- ==================================================
- * [Acesso a banco de dados com o MySql]
- * [php,composer,psr-4,JavaScript,CSS,boostrap,vue,Axio]
- *  [Uso do framework Bootstrap para realização de um layout responsivo para o projeto.]
- * [Configuração do Projeto:]
-     * [Executar a query produto.sql ou importar o arquivo no phpMyAdmin para criar a table necessária.]
-     * [Editar o arquivo config.php]
-     * [$dbNome = 'nomeDaTable'] 
-     * [$dbHost = 'nomeDoDominioOuIP:Porta'] 
-     * [$dbUsuario = 'usuarioDoMysql'] 
-     * [$dbSenha 'senhaDoUsuario']
-  <!--te-->
+
+## Layout web
+![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
+
+![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
+
+
+# Tecnologias utilizadas
+## Back end
+- PHP
+- Composer
+- PDO
+## Front end
+- HTML / CSS / BOOTSTRAP / JS / VUE /AXIOS
+- ReactJS
+- React Native
+- Apex Charts
+- Expo
+## Implantação em produção
+
+- Banco de dados: Postgresql
+
+# Como executar o projeto
+
+## Back end
+Pré-requisitos: PHP 7, PDO MYSQL
+
+```bash
+# clonar repositório
+git clone https://github.com/peacvan/sds1-wmazoni
+
+# entrar na pasta do projeto back end
+cd backend
+
+# executar o projeto
+
+```
+
+## Front end web
+Pré-requisitos: npm / yarn
+
+```bash
+# clonar repositório
+git clone https://github.com/devsuperior/sds1-wmazoni
+
+# entrar na pasta do projeto front end web
+cd front-web
+
+# instalar dependências
+yarn install
+
+# executar o projeto
+yarn start
+```
+
+# Autor
+
+Ivan Amado
+
+https://www.linkedin.com/in/wmazoni
 
 
