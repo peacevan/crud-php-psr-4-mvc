@@ -26,7 +26,7 @@ A aplicação grava dados do produto no banco de dados mysql.
 - Expo
 ## Implantação em produção
 
-- Banco de dados: Postgresql
+- Banco de dados: Mysql
 
 # Como executar o projeto
 
