@@ -30,7 +30,7 @@ A aplicação grava dados do produto no banco de dados mysql.
 # Como executar o projeto
 
 ## Back end
-Pré-requisitos: PHP 7, PDO MYSQL
+Pré-requisitos: PHP 7,Composer, PDO, MYSQL
 
 ```bash
 # clonar repositório
