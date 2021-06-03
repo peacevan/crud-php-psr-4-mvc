@@ -8,6 +8,8 @@ A aplicação grava dados do produto no banco de dados mysql.
 
 
 ## Layout web
+![Web 1](https://github.com/peacevan/assets/blob/main/tela-lista-produto.PNG)
+
 ![Web 1](https://github.com/peacevan/assets/blob/main/editar.PNG)
 
 ![Web 2](https://github.com/peacevan/assets/blob/main/remover.PNG)
@@ -35,7 +37,7 @@ Pré-requisitos: PHP 7, PDO MYSQL
 
 ```bash
 # clonar repositório
-git clone https://github.com/peacvan/sds1-wmazoni
+git clone https://github.com/peacvan/crud-php-psr-4-mvc
 
 # entrar na pasta do projeto back end
 cd backend
