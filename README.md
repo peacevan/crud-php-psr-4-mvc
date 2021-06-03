@@ -22,10 +22,7 @@ A aplicação grava dados do produto no banco de dados mysql.
 - PDO
 ## Front end
 - HTML / CSS / BOOTSTRAP / JS / VUE /AXIOS
-- ReactJS
-- React Native
-- Apex Charts
-- Expo
+
 ## Implantação em produção
 
 - Banco de dados: Mysql
@@ -43,26 +40,9 @@ git clone https://github.com/peacvan/crud-php-psr-4-mvc
 cd backend
 
 # executar o projeto
+hp -S localhost:8000
 
 ```
-
-## Front end web
-Pré-requisitos: npm / yarn
-
-```bash
-# clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
-
-# entrar na pasta do projeto front end web
-cd front-web
-
-# instalar dependências
-yarn install
-
-# executar o projeto
-yarn start
-```
-
 # Autor
 
 Ivan Amado
