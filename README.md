@@ -8,9 +8,9 @@ A aplicação grava dados do produto no banco de dados mysql.
 
 
 ## Layout web
-![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
+![Web 1](https://github.com/peacevan/assets/blob/main/editar.PNG)
 
-![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
+![Web 2](https://github.com/peacevan/assets/blob/main/remover.PNG)
 
 
 # Tecnologias utilizadas
