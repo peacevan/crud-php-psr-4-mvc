@@ -30,71 +30,116 @@
 </div>
 
 <!-- add modal -->
-<div class="modal col-md-6" id="addmodal" v-if="showingaddModal">
-    <div class="modal-head">
-        <p class="p-left p-2">Adicionar produto</p>
-        <hr/>
 
-        <div class="modal-body">
-            <div class="col-md-12">
-                <label for="uname">codigo</label>
-                <input type="text" id="uname" class="form-control" v-model="clickedProduto.cod_ean">
 
-                <label for="email">descrição</label>
-                <input type="text" id="email" class="form-control" v-model="clickedProduto.descricao_prod">
+<div class="modal" tabindex="-1" role="dialog" id="addmodal" v-if="showingaddModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">produto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="showingaddModal = false;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <label for="uname">codigo</label>
+                    <input type="text" id="uname" class="form-control" v-model="clickedProduto.cod_ean">
 
-                <label for="phn">valor</label>
-                <input type="text" id="phn" class="form-control" v-model="clickedProduto.valor">
+                    <label for="email">descrição</label>
+                    <input type="text" id="email" class="form-control" v-model="clickedProduto.descricao_prod">
+
+                    <label for="phn">valor</label>
+                    <input type="text" id="phn" class="form-control" v-model="clickedProduto.valor">
+                </div>
+                <hr/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success"  @click="showingaddModal = false; addProduto();">Salva</button>
+                <button type="button" class="btn btn-danger"   @click="showingaddModal = false;">Fecha</button>
             </div>
 
-            <hr/>
-            <button type="button" class="btn btn-success"  @click="showingaddModal = false; addProduto();">Salva</button>
-            <button type="button" class="btn btn-danger"   @click="showingaddModal = false;">Fecha</button>
         </div>
     </div>
 </div>
 
 
-<!-- edit modal -->
-<div class="modal col-md-6" id="editmodal" v-if="showingeditModal">
-    <div class="modal-head">
-        <p class="p-left p-2">Editar Produto</p>
-        <hr/>
 
-        <div class="modal-body">
-            <div class="col-md-12">
-                <label for="uname">codigo</label>
-                <input type="text" id="uname" class="form-control" v-model="clickedProduto.cod_ean">
 
-                <label for="email">descrição</label>
-                <input type="text" id="email" class="form-control" v-model="clickedProduto.descricao_prod">
 
-                <label for="phn">valor</label>
-                <input type="text" id="phn" class="form-control" v-model="clickedProduto.valor">
+
+
+<div class="modal" tabindex="-1" role="dialog" id="editModal" v-if="showingeditModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Produto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="showingeditModal = false;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <label for="uname">codigo</label>
+                    <input type="text" id="uname" class="form-control" v-model="clickedProduto.cod_ean">
+
+                    <label for="email">descrição</label>
+                    <input type="text" id="email" class="form-control" v-model="clickedProduto.descricao_prod">
+
+                    <label for="phn">valor</label>
+                    <input type="text" id="phn" class="form-control" v-model="clickedProduto.valor">
+                </div>
+
+                <hr/>
+
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-success"  @click="showingeditModal = false; updateProduto();">Save changes</button>
+                <button type="button" class="btn btn-danger"   @click="showingeditModal = false;">Close</button>
             </div>
 
-            <hr/>
-            <button type="button" class="btn btn-success"  @click="showingeditModal = false; updateProduto();">Save changes</button>
-            <button type="button" class="btn btn-danger"   @click="showingeditModal = false;">Close</button>
         </div>
     </div>
 </div>
 
 
-<!-- delete data -->
-<div class="modal col-md-6" id="deletemodal" v-if="showingdeleteModal">
-    <div class="modal-head">
-        <p class="p-left p-2">Delete user</p>
-        <hr/>
 
-        <div class="modal-body">
-            <center>
-                <p>Are you sure you want to delete?</p>
-                <h3>{{clickedProduto.descricao_prod}}</h3>
-            </center>
-            <hr/>
-            <button type="button" class="btn btn-danger"  @click="showingdeleteModal = false; deleteProduto();">Sim</button>
-            <button type="button" class="btn btn-warning"   @click="showingdeleteModal = false;">Não</button>
+
+
+
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="deletemodal" v-if="showingdeleteModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Remover Produto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="showingdeleteModal = false;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <center>
+                        <p>Deseja remover esse item?</p>
+                        <h3>{{clickedProduto.descricao_prod}}</h3>
+                    </center>
+                    <hr/>
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger"  @click="showingdeleteModal = false; deleteProduto();">Sim</button>
+                <button type="button" class="btn btn-warning"   @click="showingdeleteModal = false;">Não</button>
+            </div>
         </div>
     </div>
 </div>
+
+
+

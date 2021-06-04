@@ -18,7 +18,7 @@ class ProdutoController extends Controller {
         $data['title'] = 'Produto';
         //$data= json_encode($data);
         // passar $data para json
-        return $this->render('index', $data, true);
+        return $this->render('Produto/index', $data, true);
     }
 
     public function cadastrar($produtoPost = null) {
@@ -53,7 +53,7 @@ class ProdutoController extends Controller {
             $data['title'] = 'Produto';
             $data['redirect'] = 'produto/cadastrar';
             $data['msg'] = $msg;
-            return $this->render('cadastrar', $data, true);
+            return $this->render('Produto/cadastrar', $data, true);
         } else {
             return $res;
         }
@@ -115,7 +115,7 @@ class ProdutoController extends Controller {
             $data['title'] = 'Produto';
             $data['redirect'] = 'produto/editar';
             $data['msg'] = $msg;
-            return $this->render('cadastrar', $data, true);
+            return $this->render('produto/cadastrar', $data, true);
         } else {
             return $res;
         }
@@ -123,7 +123,7 @@ class ProdutoController extends Controller {
     function home(){
         
         
-        return $this->render('cadastrar', $data, true);
+        return $this->render('produto/cadastrar', $data, true);
     }
 }
 ?>
