@@ -15,6 +15,7 @@ class Controller {
     
     public function view($view, $data = []) {
         $file = "../src/views/{$view}.php";
+       
         
         if (file_exists($file)) {
             require_once $file;
@@ -28,7 +29,7 @@ class Controller {
      * 
      */
     public function model($model) {
-        $model = "app\\Model\\" . $model;
+        $model = "app\\Model\\".$model;
         if (class_exists($model)) {
             return new $model;
         } else {
@@ -74,12 +75,13 @@ class Controller {
      */
     
     protected function render($view, $data =[], $layout = true) {
-        //$data['mahasiswa'] = $this->model('Home')->getAll();
         //$data['title'] = $title;
+  
         if ($layout) {
             $this->view("templates/header", $data);
         }
-        $this->view("produto/" . $view, $data);
+        
+        $this->view($view,$data);
         if ($layout) {
             $this->view("templates/footer");
         }

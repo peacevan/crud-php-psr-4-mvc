@@ -2,11 +2,12 @@
 
 namespace app\Route;
 
+use app\Controller\HomeController;
 use app\Util\Util;
 
 class Route {
 
-    public $controller = 'ProdutoControle';  //'homeController';
+    public $controller = 'HomeController';  //'homeController';
     public $method = 'index';
     public $params = [];
 
@@ -14,25 +15,31 @@ class Route {
 
 
         $url = $this->parseURL();
+<<<<<<< HEAD
+       // var_dump(class_exists("app\\Controller\\{$url[0]}"));
+       // die;
+=======
        
         var_dump(class_exists("app\\Controller\\{$url[0]}"));
         die;
+>>>>>>> 0dd79aebf18de86aa74a97ab1dfc71c4dc639d50
         if (class_exists("app\\Controller\\{$url[0]}")) {
-
             $this->controller = $url[0];
             unset($url[0]);
         } else {
-            Util::dd("$url[0] not found");
         }
         $this->controller = "app\\Controller\\" . $this->controller;
         $this->controller = new $this->controller;
-
         if (isset($url[1])) {
             if (method_exists($this->controller, $url[1])) {
                 $this->method = $url[1];
                 unset($url[1]);
             } else {
+<<<<<<< HEAD
+                //Util::dd("$url[1] not found");
+=======
                 Util::dd("$url[1] not found1");
+>>>>>>> 0dd79aebf18de86aa74a97ab1dfc71c4dc639d50
                 $this->method = 'index';
             }
         }
@@ -56,6 +63,8 @@ class Route {
         /* recebe o nome de uma classe e uma função como uma string e quantos parâmetros 
           forem necessários, em seguida executa a função.
          */
+        
+       
         return call_user_func_array([$this->controller, $this->method], $this->params);
     }
 
