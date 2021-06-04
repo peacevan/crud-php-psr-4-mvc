@@ -19,7 +19,6 @@ use app\Util\Util;
  */
 $route = new Route;
 $util = new Util;
-
 /**
  * Call function run
  * runing route

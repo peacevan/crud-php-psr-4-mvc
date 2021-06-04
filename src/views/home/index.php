@@ -1,8 +1,3 @@
 
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-<h1>CRUD PHP</h1>
+<center><h1 style="margin-top:180px">CRUD COM ( PHP|COMPOSER|PSR4|MVC|VUE|AXIOS|MYSQL )</h1></center>
