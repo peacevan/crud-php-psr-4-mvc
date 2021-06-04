@@ -53,11 +53,7 @@ class ProdutoController extends Controller {
             $data['title'] = 'Produto';
             $data['redirect'] = 'produto/cadastrar';
             $data['msg'] = $msg;
-<<<<<<< HEAD
             return $this->render('Produto/cadastrar', $data, true);
-=======
-            return $this->render('cadastrar', $data, true);
->>>>>>> 0dd79aebf18de86aa74a97ab1dfc71c4dc639d50
         } else {
             return $res;
         }
@@ -119,11 +115,7 @@ class ProdutoController extends Controller {
             $data['title'] = 'Produto';
             $data['redirect'] = 'produto/editar';
             $data['msg'] = $msg;
-<<<<<<< HEAD
             return $this->render('produto/cadastrar', $data, true);
-=======
-            return $this->render('cadastrar', $data, true);
->>>>>>> 0dd79aebf18de86aa74a97ab1dfc71c4dc639d50
         } else {
             return $res;
         }
@@ -131,11 +123,7 @@ class ProdutoController extends Controller {
     function home(){
         
         
-<<<<<<< HEAD
         return $this->render('produto/cadastrar', $data, true);
-=======
-        return $this->render('cadastrar', $data, true);
->>>>>>> 0dd79aebf18de86aa74a97ab1dfc71c4dc639d50
     }
 }
 ?>

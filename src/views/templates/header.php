@@ -17,8 +17,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-<<<<<<< HEAD
-                            <a class="btn btn-link" href="http://localhost/crud-poo/crud-psr4/">Home <span class="sr-only">(current)</span></a>
+                            <a class="btn btn-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="btn btn-link" href="http://localhost/crud-poo/crud-psr4/produto">lista produto</a>
@@ -28,22 +27,6 @@
                         </li>
                         <
                        
-=======
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://localhost/crud-poo/crud-psr4/produto">lista produto</a>
-                        </li>
-                        <li class="nav-item">
-                            <!--<a class="nav-link" href="http://localhost/crud-poo/crud-psr4/produto/cadastrar">Cadastro de Produto</a>-->
-                        <li class="nav-item">
-                            <button class="btn btn-link" @click="showingaddModal = true;">Adicionar Produto</button>
-                        </li>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">vender</a>
-                        </li>
->>>>>>> 0dd79aebf18de86aa74a97ab1dfc71c4dc639d50
                     </ul>
                 </div>
             </nav>

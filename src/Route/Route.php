@@ -15,14 +15,7 @@ class Route {
 
 
         $url = $this->parseURL();
-<<<<<<< HEAD
        // var_dump(class_exists("app\\Controller\\{$url[0]}"));
-       // die;
-=======
-       
-        var_dump(class_exists("app\\Controller\\{$url[0]}"));
-        die;
->>>>>>> 0dd79aebf18de86aa74a97ab1dfc71c4dc639d50
         if (class_exists("app\\Controller\\{$url[0]}")) {
             $this->controller = $url[0];
             unset($url[0]);
@@ -35,11 +28,7 @@ class Route {
                 $this->method = $url[1];
                 unset($url[1]);
             } else {
-<<<<<<< HEAD
-                //Util::dd("$url[1] not found");
-=======
                 Util::dd("$url[1] not found1");
->>>>>>> 0dd79aebf18de86aa74a97ab1dfc71c4dc639d50
                 $this->method = 'index';
             }
         }
