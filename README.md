@@ -26,6 +26,8 @@ A aplicação grava dados do produto no banco de dados mysql.
 ## Implantação em produção
 
 - Banco de dados: Mysql
+- importar o banco de dados produtos.sql
+- 
 
 # Como executar o projeto
 
@@ -40,7 +42,7 @@ git clone https://github.com/peacvan/crud-php-psr-4-mvc
 cd backend
 
 # executar o projeto
-hp -S localhost:8000
+php -S localhost:8000
 
 ```
 # Autor
