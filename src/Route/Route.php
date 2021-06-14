@@ -53,7 +53,6 @@ class Route {
           forem necessários, em seguida executa a função.
          */
         
-       
         return call_user_func_array([$this->controller, $this->method], $this->params);
     }
 
