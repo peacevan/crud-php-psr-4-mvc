@@ -36,7 +36,7 @@ class ProdutoController extends Controller {
             $produtoModel = $produtoController->Model($this->modelProduto);
             $produtoModel->setDescricao($_POST['descricao_prod']);
             $produtoModel->setValor($_POST['valor']);
-            $produtoModel->setQtde($_POST['1']);
+            $produtoModel->setQtde(1);
             $produtoModel->setCodProduto($_POST['cod_ean']);
             //$produtoModel->setCodean();
             $res = $produtoController->getRepository('produtoRepository')
